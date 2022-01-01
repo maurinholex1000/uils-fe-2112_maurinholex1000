@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const userRegister = async (user) => {
   try {
-    if (!user?.name || !user?.surname  || !user?.email || !user?.password)
+    if (!user?.name || !user?.surname || !user?.email || !user?.password)
       return { status: false, message: "Please fill up all the fields" };
     const passwordHash = await bcrypt.hash(user?.password, 10);
     let userObject = {
@@ -17,22 +17,27 @@ const userRegister = async (user) => {
     let savedUser = await MongoDB.db
       .collection(mongoConfig.collections.USERS)
       .insertOne(userObject);
-    // if (savedUser?.acknowledged && savedUser?.insertedId) {
-    //   let token = jwt.sign(
-    //     { username: userObject?.username, email: userObject?.email },
-    //     tokenSecret,
-    //     { expiresIn: "24h" }
-    //   );
-      if (savedUser?.acknowledged && savedUser?.insertedId) {
-        let token = jwt.sign(
-          { email: userObject?.email },
-          tokenSecret,
-          { expiresIn: "24h" }
-        );
+    if (savedUser?.acknowledged && savedUser?.insertedId) {
+      let token = jwt.sign(
+        {
+          name: userObject?.name,
+          surname: userObject?.surname,
+          email: userObject?.email,
+          password: userObject?.password,
+        },
+        tokenSecret,
+        { expiresIn: "24h" }
+      );
       return {
         status: true,
         message: "User registered successfully",
-        data: token,
+        data: {
+          name: userObject.name,
+          surname: userObject.surname,
+          email: userObject.email,
+          password: userObject.password,
+        },
+        token: token,
       };
     } else {
       return {
@@ -43,9 +48,6 @@ const userRegister = async (user) => {
   } catch (error) {
     console.log(error);
     let errorMessage = "User registered failed";
-    // error?.code === 11000 && error?.keyPattern?.username
-    //   ? (errorMessage = "Username already exist")
-    //   : null;
     error?.code === 11000 && error?.keyPattern?.email
       ? (errorMessage = "Email already exist")
       : null;
@@ -71,17 +73,26 @@ const userLogin = async (user) => {
       );
       if (isPasswordVerfied) {
         let token = jwt.sign(
-          // { username: userObject?.username, email: userObject?.email },
-          {email: userObject?.email },
+          {
+            name: userObject?.name,
+            surname: userObject?.surname,
+            email: userObject?.email,
+            password: userObject?.password,
+          },
           tokenSecret,
           { expiresIn: "24h" }
         );
-        console.log('usuario registrado con exito')
+        console.log("usuario registrado con exito");
         return {
           status: true,
           message: "User login successful",
-          data: token,
-          
+          data: {
+            name: userObject.name,
+            surname: userObject.surname,
+            email: userObject.email,
+            password: userObject.password,
+          },
+          token: token,
         };
       } else {
         return {
@@ -106,6 +117,7 @@ const userLogin = async (user) => {
 };
 
 const checkUserExist = async (query) => {
+  console.log("query", query);
   let messages = {
     email: "User already exist",
     username: "This username is taken",

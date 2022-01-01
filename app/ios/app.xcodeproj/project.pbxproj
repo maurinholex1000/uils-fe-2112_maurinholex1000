@@ -28,6 +28,12 @@
 		9FF70B662DDC4E5AB77C1FCE /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01FED37D35E49FCA39E65EC /* Octicons.ttf */; };
 		58F4C96742DE404AB5F23BA1 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1BE816223F94FB382F540B3 /* SimpleLineIcons.ttf */; };
 		B2D135C875DE4B1CAA35FCC1 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF13C2540C9246C3961479C2 /* Zocial.ttf */; };
+		C0B541CDCECA48E9B3E89B3D /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75D284858CF849E8807D82FC /* Manrope-Bold.ttf */; };
+		0183C18C526C4B98A959E783 /* RedHatDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DD84311472B41DEAE3B069B /* RedHatDisplay-Bold.ttf */; };
+		4AC1C6FF2D6C4C33B88105AD /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7785E664A04A42D8A5C07EF9 /* Manrope-Regular.ttf */; };
+		CD6E465F283D41F49C1C9A25 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFFA64ACA2B413EAB5B3145 /* Manrope-SemiBold.ttf */; };
+		304734AC5278439E952C5AD5 /* RedHatDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC03061A35A24582AEC27B3E /* RedHatDisplay-Medium.ttf */; };
+		15CEFA9B59B04F38BB3A6961 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F97407E432844C0B54697DE /* Manrope-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,12 @@
 		B01FED37D35E49FCA39E65EC /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C1BE816223F94FB382F540B3 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DF13C2540C9246C3961479C2 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		75D284858CF849E8807D82FC /* Manrope-Bold.ttf */ = {isa = PBXFileReference; name = "Manrope-Bold.ttf"; path = "../src/assets/fonts/Manrope-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0DD84311472B41DEAE3B069B /* RedHatDisplay-Bold.ttf */ = {isa = PBXFileReference; name = "RedHatDisplay-Bold.ttf"; path = "../src/assets/fonts/RedHatDisplay-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7785E664A04A42D8A5C07EF9 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; name = "Manrope-Regular.ttf"; path = "../src/assets/fonts/Manrope-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DCFFA64ACA2B413EAB5B3145 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; name = "Manrope-SemiBold.ttf"; path = "../src/assets/fonts/Manrope-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC03061A35A24582AEC27B3E /* RedHatDisplay-Medium.ttf */ = {isa = PBXFileReference; name = "RedHatDisplay-Medium.ttf"; path = "../src/assets/fonts/RedHatDisplay-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3F97407E432844C0B54697DE /* Manrope-Medium.ttf */ = {isa = PBXFileReference; name = "Manrope-Medium.ttf"; path = "../src/assets/fonts/Manrope-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +188,12 @@
 				B01FED37D35E49FCA39E65EC /* Octicons.ttf */,
 				C1BE816223F94FB382F540B3 /* SimpleLineIcons.ttf */,
 				DF13C2540C9246C3961479C2 /* Zocial.ttf */,
+				75D284858CF849E8807D82FC /* Manrope-Bold.ttf */,
+				0DD84311472B41DEAE3B069B /* RedHatDisplay-Bold.ttf */,
+				7785E664A04A42D8A5C07EF9 /* Manrope-Regular.ttf */,
+				DCFFA64ACA2B413EAB5B3145 /* Manrope-SemiBold.ttf */,
+				FC03061A35A24582AEC27B3E /* RedHatDisplay-Medium.ttf */,
+				3F97407E432844C0B54697DE /* Manrope-Medium.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +305,12 @@
 				9FF70B662DDC4E5AB77C1FCE /* Octicons.ttf in Resources */,
 				58F4C96742DE404AB5F23BA1 /* SimpleLineIcons.ttf in Resources */,
 				B2D135C875DE4B1CAA35FCC1 /* Zocial.ttf in Resources */,
+				C0B541CDCECA48E9B3E89B3D /* Manrope-Bold.ttf in Resources */,
+				0183C18C526C4B98A959E783 /* RedHatDisplay-Bold.ttf in Resources */,
+				4AC1C6FF2D6C4C33B88105AD /* Manrope-Regular.ttf in Resources */,
+				CD6E465F283D41F49C1C9A25 /* Manrope-SemiBold.ttf in Resources */,
+				304734AC5278439E952C5AD5 /* RedHatDisplay-Medium.ttf in Resources */,
+				15CEFA9B59B04F38BB3A6961 /* Manrope-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
