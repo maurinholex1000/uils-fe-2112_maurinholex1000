@@ -18,7 +18,7 @@ Setup instructions
 # Clone the project
 git clone https://github.com/maurinholex1000/uils-fe-2112_maurinholex1000.git
 
-2. Install all dependencies
+2. Install all dependencies and configure the Backend
 # Navigate to app and api directory
   cd app
 
@@ -27,3 +27,16 @@ git clone https://github.com/maurinholex1000/uils-fe-2112_maurinholex1000.git
   cd api
 
   npm install
+
+# Put your IP and Port in the package.json of the app and api folder
+# api>package.json
+"projectConfig": {
+    "mongoConnectionUrl": "mongodb+srv://maurinholex10:Zehrita8@uils.fmjwh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "serverIp": "Put your IP",
+    "serverPort": "Put the Port"
+  }
+# app>package.json
+"projectConfig": {
+    "backendApiBaseUrl": "Put your IP" : "Put the Port"
+  }
+# Disable Firewall
