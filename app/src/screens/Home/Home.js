@@ -7,7 +7,8 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import {COLORS, FONTS, SIZES} from '../../constants/theme';
+import LinearGradient from 'react-native-linear-gradient';
+import {COLORS, FONTS} from '../../constants/theme';
 import {useSelector} from 'react-redux';
 import HomeStyles from '../../styles/home.style';
 
@@ -181,16 +182,23 @@ const HomeScreen = () => {
             ¡Disfruta el primer mes 100% bonificado!
           </Text>
         </View>
+
         <ImageBackground
           source={require('../../assets/images/disfruta_adelantos.png')}
           style={{
             height: 191,
             justifyContent: 'flex-end',
           }}>
-          <Text style={HomeStyles.titleCardSubscribe}>
-            Adelantos inmediatos, sin interes por solo $200
-          </Text>
+          <LinearGradient
+            colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}
+            useAngle={true}
+            angle={180}>
+            <Text style={HomeStyles.titleCardSubscribe}>
+              Adelantos inmediatos, sin interes por solo $200
+            </Text>
+          </LinearGradient>
         </ImageBackground>
+
         <View style={HomeStyles.cardBottomSubscribe}>
           <Text style={[HomeStyles.textCard, {width: 185}]}>
             Suscribite a nuestro plan de adelantos por $200 semanales
@@ -248,3 +256,4 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
+

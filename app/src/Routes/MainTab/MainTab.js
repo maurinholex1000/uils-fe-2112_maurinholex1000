@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, Image, View, useColorScheme} from 'react-native';
+import {Image} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
-import LoginRegisterScreen from '../../screens/LoginRegister/LoginRegister';
 import HomeScreen from '../../screens/Home/Home';
 import ProfileScreen from '../../screens/Profile/Profile';
+import WinningsScreen from '../../screens/Winnings/Winnings';
+import CreditsScreen from '../../screens/Credits/Credits';
 import {FONTS, COLORS} from '../../constants/theme';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -43,7 +43,7 @@ const MainTabScreen = () => {
 
       <Tab.Screen
         name="Ganancias"
-        component={LoginRegisterScreen}
+        component={WinningsScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Image
@@ -60,7 +60,7 @@ const MainTabScreen = () => {
 
       <Tab.Screen
         name="Créditos"
-        component={HomeScreen}
+        component={CreditsScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Image

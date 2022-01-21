@@ -14,7 +14,6 @@ import {
 import OnboardingStyles from '../../styles/onboarding.style';
 import RegisterStyles from '../../styles/register.style';
 import {COLORS, SIZES, FONTS} from '../../constants/theme';
-import AntDesignIcons from 'react-native-vector-icons/AntDesign';
 import data from '../../data/Login';
 import {CommonActions, useNavigation} from '@react-navigation/native';
 import AuthenticationService from '../../services/AuthenticationService';
@@ -370,7 +369,16 @@ const LoginScreen = () => {
                 }}></ImageBackground>
               <TouchableOpacity onPress={onChangeLocked}>
                 <ImageBackground
-                  source={require('../../assets/images/PIN_2.png')}
+                  source={
+                    locked[0] &&
+                    locked[1] &&
+                    locked[2] &&
+                    locked[3] &&
+                    locked[4] &&
+                    locked[5]
+                      ? require('../../assets/images/PIN_2.png')
+                      : require('../../assets/images/PIN_3.png')
+                  }
                   style={{
                     width: 143,
                     height: 36,
@@ -383,7 +391,6 @@ const LoginScreen = () => {
       </View>
     );
   };
-
 
   return (
     <View

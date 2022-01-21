@@ -319,7 +319,7 @@ const ProfileScreen = () => {
         </View>
 
         <Text style={ProfileStyles.textFooter}>
-          Uils© 2021. Version de la App V.0.01
+          Uils© 2021.            Version de la App V.0.01
         </Text>
       </View>
     </ScrollView>

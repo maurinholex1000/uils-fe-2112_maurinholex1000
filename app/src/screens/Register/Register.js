@@ -14,7 +14,6 @@ import {
 import RegisterStyles from '../../styles/register.style';
 import OnboardingStyles from '../../styles/onboarding.style';
 import {COLORS, FONTS, SIZES} from '../../constants/theme';
-import AntDesignIcons from 'react-native-vector-icons/AntDesign';
 import data from '../../data/Register';
 import {CommonActions, useNavigation} from '@react-navigation/native';
 import AuthenticationService from '../../services/AuthenticationService';
@@ -71,7 +70,7 @@ const RegisterScreen = () => {
             console.log('pudiste registrarte y loguearte', response.data);
             dispatch(createUser(response.data));
             console.log('entraste al loguin', userRedux);
-            navigation.dispatch(CommonActions.navigate({name: 'Home'}));
+            navigation.dispatch(CommonActions.navigate({name: 'MainTab'}));
           }
         });
       }
@@ -86,6 +85,24 @@ const RegisterScreen = () => {
     setCurrentPage(viewableItems[0].index);
   }, [viewableItems]);
 
+  const isAlphanumeric = value => {
+    console.log('entra al control');
+    if (/[^a-zA-Z0-9]/.test(value)) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const isEmail = value => {
+    console.log('entra al control');
+    if (!/\S+@\S+\.\S+/.test(value)) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   const handleNext = () => {
     if (
       currentPage == 2 &&
@@ -99,16 +116,31 @@ const RegisterScreen = () => {
       register();
     }
     if (currentPage == 1 && email) {
-      flatlistRef.current.scrollToIndex({
-        animated: true,
-        index: currentPage + 1,
-      });
+      if (isEmail(email)) {
+        flatlistRef.current.scrollToIndex({
+          animated: true,
+          index: currentPage + 1,
+        });
+      } else {
+        Alert.alert('ERROR', 'Ingrese un Email válido', [{text: 'OK'}]);
+      }
     }
     if (currentPage == 0 && name && surname) {
-      flatlistRef.current.scrollToIndex({
-        animated: true,
-        index: currentPage + 1,
-      });
+      console.log('entra al control de nombre y apellido');
+      if (isAlphanumeric(name)) {
+        if (isAlphanumeric(surname)) {
+          flatlistRef.current.scrollToIndex({
+            animated: true,
+            index: currentPage + 1,
+          });
+        } else {
+          Alert.alert('ERROR', 'Apellido es un campo alfanumérico', [
+            {text: 'OK'},
+          ]);
+        }
+      } else {
+        Alert.alert('ERROR', 'Nombre es un campo alfanumérico', [{text: 'OK'}]);
+      }
     }
   };
 

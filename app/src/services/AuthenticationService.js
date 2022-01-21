@@ -1,10 +1,10 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import {ApiContants} from '../contants';
+import ApiContants from '../constants/ApiContants';
 
-// const AuthRequest = axios.create({
-//   baseURL: ApiContants.BACKEND_API.BASE_API_URL,
-// });
+const AuthRequest = axios.create({
+  baseURL: ApiContants.BACKEND_API.BASE_API_URL,
+});
 
 const register = async user => {
   if (!user?.name || !user?.surname || !user?.email || !user?.password) {
@@ -17,14 +17,11 @@ const register = async user => {
       email: user?.email,
       password: user?.password,
     };
-    // let registerResponse = await AuthRequest.post(
-    //   ApiContants.BACKEND_API.REGISTER,
-    //   requestBody,
-    // );
-    console.log('llega hasta antes del axios', requestBody);
 
-    let registerResponse = await axios.post(
-      'http://192.168.1.101:8000/api/register',
+    console.log('llega hasta antes del axios', requestBody);
+    console.log('backend', ApiContants.BACKEND_API.REGISTER);
+    let registerResponse = await AuthRequest.post(
+      ApiContants.BACKEND_API.REGISTER,
       requestBody,
     );
 
@@ -53,12 +50,8 @@ const login = async user => {
       password: user?.password,
     };
     console.log('llega hasta antes del axios', requestBody);
-    // let loginResponse = await AuthRequest.post(
-    //   ApiContants.BACKEND_API.LOGIN,
-    //   requestBody,
-    // );
-    let loginResponse = await axios.post(
-      'http://192.168.1.101:8000/api/login',
+    let loginResponse = await AuthRequest.post(
+      ApiContants.BACKEND_API.LOGIN,
       requestBody,
     );
     console.log(loginResponse.data.token);
@@ -79,12 +72,8 @@ const login = async user => {
 const checkUserExist = async (type, value) => {
   try {
     let params = {[type]: value};
-    // let userCheckResponse = await AuthRequest.get(
-    //   ApiContants.BACKEND_API.USER_EXIST,
-    //   {params},
-    // );
-    let userCheckResponse = await axios.get(
-      'http://192.168.1.101:8000/api/user-exist',
+    let userCheckResponse = await AuthRequest.get(
+      ApiContants.BACKEND_API.USER_EXIST,
       {params},
     );
     return userCheckResponse?.data;

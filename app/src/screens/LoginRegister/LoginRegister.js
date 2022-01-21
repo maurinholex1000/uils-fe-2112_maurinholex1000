@@ -53,8 +53,8 @@ const LoginRegisterScreen = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingHorizontal: SIZES.base * 2,
-            paddingVertical: SIZES.base * 2,
+            paddingHorizontal: 20,
+            paddingVertical: 20,
           }}>
           <TouchableOpacity
             onPress={goToLogin}
